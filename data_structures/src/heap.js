@@ -1,5 +1,26 @@
 const heapsort = (arr) => {
   /* Your code here */
+ 
+ const heap = new Heap();
+ 
+ arr.forEach(i =>{
+   heap.insert(i)
+ })
+ const newArr = [];
+
+ while(heap.getSize()){}
+ 
+ //const heap = new Heap();
+  // arrayLength = arr.length;
+  // for (let i = Math.floor(arrayLength/2); i >= 0; i-=1) {
+  //   heap.siftDown(arr)
+  // }
+  // for (let index = arr.length - 1; i < 0; i--) {
+  //   heap.bubbleUp(arr)
+  //   arrayLength--;
+  //   heap.siftDown(arr)
+    
+  // }
   
 };
 

@@ -1,3 +1,19 @@
+class Queue{
+  constructor(){
+    this.storage =[]
+  }
+  enqueue(element){
+    this.storage.push
+  }
+  dequeue(){
+    return this.storage.shift()
+  }
+  isEmpty(){
+    return this.storage.length === 0;
+  }
+}
+
+
 class BinarySearchTree {
   constructor(value) {
     this.value = value;
@@ -7,11 +23,31 @@ class BinarySearchTree {
 
   depthFirstForEach(cb) {
     /* Your code here */
+    cb(this.value)
+    if(this.left){
+      this.left.depthFirstForEach(cb);
+
+    }
+    if(this.right){
+      this.right.depthFirstForEach(cb)
+    }
     
   }
 
   breadthFirstForEach(cb) {
     /* Your code here */
+    const queue = new Queue()
+    queue.enqueue(this)
+    while(!queue.isEmpty()){
+      newNode = queue.dequeue();
+    }
+    if(newNode.left){
+      queue.enqueue(newNode.left)
+    }
+    if(newNode.right){
+      queue.enqueue(newNode.right)
+    }
+    cb(node.value)
 
   }
 
