@@ -36,20 +36,35 @@ class BinarySearchTree {
 
   breadthFirstForEach(cb) {
     /* Your code here */
-    const queue = new Queue()
-    queue.enqueue(this)
-    while(!queue.isEmpty()){
-      newNode = queue.dequeue();
-    }
-    if(newNode.left){
-      queue.enqueue(newNode.left)
-    }
-    if(newNode.right){
-      queue.enqueue(newNode.right)
-    }
-    cb(node.value)
-
+//seans
+const queue =[]
+queue.push(this)
+while(queue.length){
+  const node = queue.shift()
+  if(node.left){
+    queue.push(node.left)
   }
+  if(node.right){
+    queue.push(node.right)
+  }
+
+  cb(node.value)
+}
+//my solution don't work
+  //   const queue = new Queue()
+  //   queue.enqueue(this)
+  //   while(!queue.isEmpty()){
+  //     newNode = queue.dequeue();
+  //   }
+  //   if(newNode.left){
+  //     queue.enqueue(newNode.left)
+  //   }
+  //   if(newNode.right){
+  //     queue.enqueue(newNode.right)
+  //   }
+  //   cb(newNode.value)
+
+ }
 
   insert(value) {
     const newNode = new BinarySearchTree(value);
