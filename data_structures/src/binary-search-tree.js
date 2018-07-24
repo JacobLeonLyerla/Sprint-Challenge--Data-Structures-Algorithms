@@ -51,21 +51,22 @@ class BinarySearchTree {
 //   cb(node.value)
 // }
 //my solution don't work
-    const queue = new Queue()
-    queue.enqueue(this)
-    while(!queue.isEmpty()){
-     const newNode = queue.dequeue();
-    }
+//change to array
+   const queue =[]
+   //changed enqueue to push code works now
+    queue.push(this)
+    while(queue.length){
+     const newNode = queue.shift();
+    
     if(newNode.left){
-      queue.enqueue(newNode.left)
+      queue.push(newNode.left)
     }
     if(newNode.right){
-      queue.enqueue(newNode.right)
+      queue.push(newNode.right)
     }
     cb(newNode.value)
-
  }
-
+}
   insert(value) {
     const newNode = new BinarySearchTree(value);
     if (value < this.value) {
